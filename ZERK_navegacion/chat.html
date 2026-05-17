@@ -1,3 +1,73 @@
+<!-- ZERK NAV START -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+.zerk-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:100}
+.zerk-overlay.open{opacity:1;pointer-events:all}
+.zerk-sidemenu{position:fixed;top:0;left:0;bottom:0;width:25%;min-width:160px;max-width:260px;background:#1A1D23;border-right:1px solid #2a2d35;z-index:101;transform:translateX(-100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;font-family:sans-serif}
+.zerk-sidemenu.open{transform:translateX(0)}
+.zm-header{padding:14px 12px 10px;border-bottom:1px solid #2a2d35;display:flex;align-items:center;gap:8px}
+.zm-logo{color:#E63946;font-size:15px;font-weight:700;letter-spacing:1px}
+.zm-close{margin-left:auto;width:24px;height:24px;background:#2B2D42;border:none;border-radius:4px;color:#EAEAEA;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.zm-close:hover{background:#E63946}
+.zm-user{margin:10px 10px 4px;background:#12141a;border:1px solid #2a2d35;border-radius:8px;padding:8px;display:flex;align-items:center;gap:7px}
+.zm-av{width:30px;height:30px;border-radius:50%;background:#E63946;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;flex-shrink:0;position:relative}
+.zm-dot{position:absolute;bottom:0;right:0;width:9px;height:9px;background:#2ECC71;border-radius:50%;border:2px solid #1A1D23}
+.zm-uname{color:#EAEAEA;font-size:9px;font-weight:600}
+.zm-ulevel{color:#8D99AE;font-size:7px;margin-top:1px}
+.zm-section{padding:8px 10px 2px}
+.zm-label{color:#8D99AE;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.zm-item{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:6px;cursor:pointer;color:#8D99AE;font-size:10px;text-decoration:none;transition:background .15s,color .15s;margin-bottom:1px;position:relative}
+.zm-item:hover{background:#2B2D42;color:#EAEAEA}
+.zm-item.active{background:#1e0f12;color:#E63946}
+.zm-item.active::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:2px;background:#E63946;border-radius:0 2px 2px 0}
+.zm-item i{font-size:14px;flex-shrink:0}
+.zm-badge{margin-left:auto;background:#E63946;color:#fff;font-size:7px;padding:1px 5px;border-radius:8px;font-weight:700}
+.zm-divider{height:1px;background:#2a2d35;margin:6px 10px}
+.zm-footer{margin-top:auto;padding:10px;border-top:1px solid #2a2d35}
+.zm-signout{display:flex;align-items:center;gap:7px;padding:6px 8px;border-radius:6px;cursor:pointer;color:#8D99AE;font-size:9px;transition:background .15s,color .15s}
+.zm-signout:hover{background:#2B2D42;color:#EAEAEA}
+.zm-signout i{font-size:13px}
+</style>
+<div class="zerk-overlay" id="zOverlay" onclick="zCloseMenu()"></div>
+<div class="zerk-sidemenu" id="zMenu">
+  <div class="zm-header">
+    <div class="zm-logo">ZERK</div>
+    <button class="zm-close" onclick="zCloseMenu()"><i class="ti ti-x"></i></button>
+  </div>
+  <div class="zm-user">
+    <div class="zm-av">BA<div class="zm-dot"></div></div>
+    <div><div class="zm-uname">Brayan Allarza</div><div class="zm-ulevel">Nv. 42 &middot; Medellin</div></div>
+  </div>
+  <div class="zm-section">
+    <div class="zm-label">Principal</div>
+    <a class="zm-item" href="inicio.html"><i class="ti ti-home"></i> Inicio</a>
+    <a class="zm-item" href="tienda.html"><i class="ti ti-shopping-cart"></i> Tienda</a>
+    <a class="zm-item" href="biblioteca.html"><i class="ti ti-books"></i> Biblioteca</a>
+    <a class="zm-item" href="comparador.html"><i class="ti ti-chart-line"></i> Comparador <span class="zm-badge">NEW</span></a>
+  </div>
+  <div class="zm-divider"></div>
+  <div class="zm-section">
+    <div class="zm-label">Social</div>
+    <a class="zm-item" href="foro.html"><i class="ti ti-users"></i> Comunidad</a>
+    <a class="zm-item" href="chat.html"><i class="ti ti-message-circle"></i> Chat <span class="zm-badge">7</span></a>
+    <a class="zm-item" href="perfil.html"><i class="ti ti-user-circle"></i> Mi perfil</a>
+  </div>
+  <div class="zm-divider"></div>
+  <div class="zm-section">
+    <div class="zm-label">M&aacute;s</div>
+    <a class="zm-item" href="#"><i class="ti ti-bell"></i> Notificaciones <span class="zm-badge">3</span></a>
+    <a class="zm-item" href="#"><i class="ti ti-settings"></i> Ajustes</a>
+  </div>
+  <div class="zm-footer">
+    <div class="zm-signout"><i class="ti ti-logout"></i> Cerrar sesi&oacute;n</div>
+  </div>
+</div>
+<script>
+function zOpenMenu(){document.getElementById('zMenu').classList.add('open');document.getElementById('zOverlay').classList.add('open')}
+function zCloseMenu(){document.getElementById('zMenu').classList.remove('open');document.getElementById('zOverlay').classList.remove('open')}
+(function(){var path=window.location.pathname.split('/').pop();document.querySelectorAll('.zm-item').forEach(function(a){if(a.getAttribute('href')===path)a.classList.add('active');});})();
+</script>
+<!-- ZERK NAV END -->
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -8,6 +78,9 @@
 .srv-icon i{font-size:16px;color:#8D99AE}
 .srv-icon.active i{color:#E63946}
 .srv-sep{width:24px;height:1px;background:#2a2d35}
+/* Hamburger icon */
+.hamburger{width:36px;height:36px;border-radius:50%;background:#1A1D23;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;border:2px solid transparent;flex-shrink:0}
+.hamburger span{display:block;width:16px;height:2px;background:#8D99AE;border-radius:1px}
 .channels{width:160px;background:#12141a;border-right:1px solid #2a2d35;display:flex;flex-direction:column}
 .ch-header{padding:10px 10px 6px;border-bottom:1px solid #2a2d35}
 .ch-server-name{color:#EAEAEA;font-size:11px;font-weight:700}
@@ -54,9 +127,14 @@
 .dot-gray{background:#8D99AE}
 .mem-name{color:#8D99AE;font-size:9px}
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <div class="screen">
   <div class="servers">
-    <div class="srv-icon"><i class="ti ti-home"></i></div>
+    <div class="hamburger" onclick="zOpenMenu()" title="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="srv-sep"></div>
     <div class="srv-icon active" title="Elden Ring"><span>ER</span></div>
     <div class="srv-icon" title="God of War"><span>GoW</span></div>
