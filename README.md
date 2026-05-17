@@ -128,3 +128,7 @@ Perfil — completar datos, agregar amigos y personalizar
 ---
 
 *Proyecto Integrador de Aula — IUPB 2025*
+<<<<<<< HEAD
+=======
+
+>>>>>>> a902ebf683683d435d7e3005a1af83b73411977b

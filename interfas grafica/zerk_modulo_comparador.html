@@ -1,0 +1,130 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.screen{background:#0D0F12;border-radius:12px;overflow:hidden;width:100%;max-width:680px}
+.topbar{background:#1A1D23;display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #2a2d35}
+.hamburger{display:flex;flex-direction:column;gap:4px}.hamburger span{width:18px;height:2px;background:#EAEAEA;border-radius:2px}
+.logo{color:#E63946;font-size:16px;font-weight:700;letter-spacing:1px}
+.topbar-title{color:#EAEAEA;font-size:13px;font-weight:600}
+.search-section{padding:16px;background:#12141a;border-bottom:1px solid #2a2d35}
+.big-search{background:#1A1D23;border:1px solid #2a2d35;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px}
+.big-search i{color:#E63946;font-size:18px}
+.big-search span{color:#8D99AE;font-size:13px;flex:1}
+.search-btn{background:#E63946;color:#fff;border:none;border-radius:5px;padding:7px 16px;font-size:11px;cursor:pointer}
+.game-result{padding:12px 14px;border-bottom:1px solid #2a2d35;display:flex;gap:12px;align-items:center}
+.game-cover-lg{width:80px;height:56px;background:#2B2D42;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.game-cover-lg i{font-size:28px;color:#E63946;opacity:0.5}
+.game-result-info{flex:1}
+.gr-title{color:#EAEAEA;font-size:14px;font-weight:700}
+.gr-meta{color:#8D99AE;font-size:10px;margin-top:2px}
+.gr-best{color:#2ECC71;font-size:11px;font-weight:700;margin-top:4px}
+.wish-btn{background:transparent;border:1px solid #2a2d35;color:#EAEAEA;border-radius:5px;padding:5px 10px;font-size:10px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.wish-btn i{font-size:12px;color:#E63946}
+.table-section{padding:12px 14px}
+.table-title{color:#EAEAEA;font-size:11px;font-weight:600;margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+th{background:#1A1D23;color:#8D99AE;font-size:9px;font-weight:700;text-align:left;padding:6px 10px;border:1px solid #2a2d35;text-transform:uppercase}
+td{padding:7px 10px;border:1px solid #2a2d35;font-size:10px;color:#8D99AE}
+tr:nth-child(even) td{background:#12141a}
+td.store-name{color:#EAEAEA;font-weight:600;display:flex;align-items:center;gap:6px}
+td.price-now{color:#2ECC71;font-weight:700}
+td.price-low{color:#E9A944}
+td.disc{color:#E63946;font-weight:700}
+.best-row td{border-left:2px solid #2ECC71}
+.go-btn{background:#E63946;color:#fff;border:none;border-radius:3px;padding:2px 8px;font-size:9px;cursor:pointer}
+.chart-section{padding:12px 14px;border-top:1px solid #2a2d35}
+.chart-title{color:#EAEAEA;font-size:11px;font-weight:600;margin-bottom:8px}
+.chart-area{position:relative;height:70px;background:#12141a;border-radius:6px;border:1px solid #2a2d35;overflow:hidden;padding:8px}
+svg.price-chart{width:100%;height:100%}
+.alert-box{margin:8px 14px;background:#1a3a2a;border:1px solid #2ECC71;border-radius:6px;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.alert-box i{color:#2ECC71;font-size:16px}
+.alert-txt{color:#EAEAEA;font-size:10px;flex:1}
+.alert-btn{background:#2ECC71;color:#0D0F12;border:none;border-radius:4px;padding:4px 10px;font-size:9px;font-weight:700;cursor:pointer}
+</style>
+<div class="screen">
+  <div class="topbar">
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="logo">ZERK</div>
+    <div class="topbar-title">Comparador de precios</div>
+  </div>
+  <div class="search-section">
+    <div class="big-search">
+      <i class="ti ti-chart-line"></i>
+      <span>Elden Ring</span>
+      <button class="search-btn">Comparar</button>
+    </div>
+  </div>
+  <div class="game-result">
+    <div class="game-cover-lg"><i class="ti ti-sword"></i></div>
+    <div class="game-result-info">
+      <div class="gr-title">Elden Ring</div>
+      <div class="gr-meta">FromSoftware · Accion RPG · 2022 · PC / PS5 / Xbox</div>
+      <div class="gr-best">Mejor precio: $29.99 en GamersGate</div>
+    </div>
+    <button class="wish-btn"><i class="ti ti-bell"></i> Alertar precio</button>
+  </div>
+  <div class="table-section">
+    <div class="table-title">Comparativa de precios — 5 tiendas</div>
+    <table>
+      <tr><th>Tienda</th><th>Precio actual</th><th>Min. historico</th><th>Descuento</th><th>Acceso</th></tr>
+      <tr class="best-row">
+        <td><div class="store-name"><i class="ti ti-crown" style="color:#E9A944;font-size:11px"></i>GamersGate</div></td>
+        <td class="price-now">$29.99</td>
+        <td class="price-low">$17.49</td>
+        <td class="disc">-50%</td>
+        <td><button class="go-btn">Ir</button></td>
+      </tr>
+      <tr>
+        <td><div class="store-name">Steam</div></td>
+        <td class="price-now">$35.99</td>
+        <td class="price-low">$17.99</td>
+        <td class="disc">-40%</td>
+        <td><button class="go-btn">Ir</button></td>
+      </tr>
+      <tr>
+        <td><div class="store-name">Humble</div></td>
+        <td>$39.99</td>
+        <td class="price-low">$19.99</td>
+        <td class="disc">-33%</td>
+        <td><button class="go-btn">Ir</button></td>
+      </tr>
+      <tr>
+        <td><div class="store-name">Epic Games</div></td>
+        <td>$49.99</td>
+        <td class="price-low">$24.99</td>
+        <td class="disc">-17%</td>
+        <td><button class="go-btn">Ir</button></td>
+      </tr>
+      <tr>
+        <td><div class="store-name">GOG</div></td>
+        <td>$59.99</td>
+        <td class="price-low">$29.99</td>
+        <td style="color:#8D99AE">0%</td>
+        <td><button class="go-btn">Ir</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="chart-section">
+    <div class="chart-title">Historial de precios — 12 meses</div>
+    <div class="chart-area">
+      <svg class="price-chart" viewBox="0 0 600 54" preserveAspectRatio="none">
+        <polyline points="0,10 60,10 80,30 120,28 160,32 200,15 240,14 280,38 320,36 360,20 400,18 440,45 480,42 540,22 600,8"
+          fill="none" stroke="#E63946" stroke-width="2"/>
+        <line x1="0" y1="48" x2="600" y2="48" stroke="#2a2d35" stroke-width="1"/>
+        <text x="2" y="52" fill="#8D99AE" font-size="7">Ene</text>
+        <text x="100" y="52" fill="#8D99AE" font-size="7">Mar</text>
+        <text x="200" y="52" fill="#8D99AE" font-size="7">May</text>
+        <text x="300" y="52" fill="#8D99AE" font-size="7">Jul</text>
+        <text x="400" y="52" fill="#8D99AE" font-size="7">Sep</text>
+        <text x="500" y="52" fill="#8D99AE" font-size="7">Nov</text>
+        <line x1="440" y1="0" x2="440" y2="48" stroke="#2ECC71" stroke-width="1" stroke-dasharray="2,2"/>
+        <text x="442" y="10" fill="#2ECC71" font-size="7">Min $17.49</text>
+      </svg>
+    </div>
+  </div>
+  <div class="alert-box">
+    <i class="ti ti-bell-ringing"></i>
+    <div class="alert-txt">Recibe una notificacion cuando Elden Ring baje de $25.00</div>
+    <button class="alert-btn">Activar alerta</button>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.screen{background:#0D0F12;border-radius:12px;overflow:hidden;width:100%;max-width:680px}
+.topbar{background:#1A1D23;display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #2a2d35}
+.hamburger{display:flex;flex-direction:column;gap:4px}.hamburger span{width:18px;height:2px;background:#EAEAEA;border-radius:2px}
+.logo{color:#E63946;font-size:16px;font-weight:700;letter-spacing:1px}
+.topbar-title{color:#EAEAEA;font-size:13px;font-weight:600}
+.stats-bar{display:flex;gap:0;background:#1A1D23;border-bottom:1px solid #2a2d35}
+.stat{flex:1;text-align:center;padding:8px 0;border-right:1px solid #2a2d35}
+.stat:last-child{border-right:none}
+.stat-num{color:#EAEAEA;font-size:14px;font-weight:700}
+.stat-lbl{color:#8D99AE;font-size:8px;margin-top:1px}
+.filters-row{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #2a2d35;background:#12141a}
+.f-search{flex:1;background:#1A1D23;border:1px solid #2a2d35;border-radius:4px;padding:4px 8px;display:flex;align-items:center;gap:5px}
+.f-search i{color:#8D99AE;font-size:11px}.f-search span{color:#8D99AE;font-size:10px}
+.chip{background:#2B2D42;color:#EAEAEA;font-size:9px;padding:3px 8px;border-radius:10px;cursor:pointer}
+.chip.active{background:#E63946}
+.tabs{display:flex;border-bottom:1px solid #2a2d35;background:#12141a}
+.tab{flex:1;text-align:center;padding:7px 0;color:#8D99AE;font-size:10px;cursor:pointer;border-bottom:2px solid transparent}
+.tab.active{color:#E63946;border-bottom-color:#E63946}
+.game-list{padding:8px 12px;display:flex;flex-direction:column;gap:7px}
+.game-row{background:#1A1D23;border:1px solid #2a2d35;border-radius:8px;display:flex;align-items:center;gap:10px;padding:8px 10px}
+.game-cover{width:52px;height:38px;background:#2B2D42;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.game-cover i{font-size:18px;color:#E63946;opacity:0.5}
+.game-info{flex:1}
+.game-name{color:#EAEAEA;font-size:11px;font-weight:600}
+.game-meta{color:#8D99AE;font-size:9px;margin-top:2px}
+.status-pill{font-size:8px;padding:2px 8px;border-radius:8px;font-weight:600}
+.s-jugando{background:#1a3a2a;color:#2ECC71}
+.s-completado{background:#1e2235;color:#8D99AE}
+.s-pendiente{background:#2a1f0a;color:#E9A944}
+.s-abandonado{background:#2a1015;color:#E63946}
+.game-hours{color:#8D99AE;font-size:9px;text-align:right;min-width:48px}
+.game-btns{display:flex;gap:5px}
+.g-btn{background:#2B2D42;border:none;border-radius:4px;padding:3px 8px;color:#EAEAEA;font-size:8px;cursor:pointer}
+.g-btn.red{background:#E63946}
+</style>
+//barra superior con logo y titulo
+<div class="screen">
+  <div class="topbar">
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="logo">ZERK</div>
+    <div class="topbar-title">Mi biblioteca</div>
+  </div>
+  //barra de estadisticas generales
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">24</div><div class="stat-lbl">Juegos</div></div>
+    <div class="stat"><div class="stat-num">438h</div><div class="stat-lbl">horas Jugadas</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">Completados</div></div>
+    <div class="stat"><div class="stat-num">RPG</div><div class="stat-lbl">Genero fav.</div></div>
+  </div>
+  //catalogo de biblioteca
+  <div class="filters-row">
+    <div class="f-search"><i class="ti ti-search"></i><span>Buscar en mi biblioteca...</span></div>
+    <div class="chip active">Todos</div>
+    <div class="chip">Recientes</div>
+    <div class="chip">RPG</div>
+  </div>
+  <div class="tabs">
+    <div class="tab active">Todos (24)</div>
+    <div class="tab">Jugando (3)</div>
+    <div class="tab">Completado (6)</div>
+    <div class="tab">Pendiente (11)</div>
+    <div class="tab">Abandonado (4)</div>
+  </div>
+  <div class="game-list">// lista de juegos, cada fila es un juego con su portada, nombre, estado, horas jugadas y botones de accion
+    <div class="game-row">
+      <div class="game-cover"><i class="ti ti-sword"></i></div>
+      <div class="game-info"><div class="game-name">Elden Ring</div><div class="game-meta">FromSoftware · Accion RPG</div></div>
+      <span class="status-pill s-jugando">Jugando</span>
+      <div class="game-hours">212h</div>
+      <div class="game-btns"><button class="g-btn red">Foro</button><button class="g-btn">opciones</button></div>
+    </div>
+    <div class="game-row">
+      <div class="game-cover"><i class="ti ti-axe"></i></div>
+      <div class="game-info"><div class="game-name">God of War</div><div class="game-meta">Santa Monica · Accion</div></div>
+      <span class="status-pill s-completado">Completado</span>
+      <div class="game-hours">38h</div>
+      <div class="game-btns"><button class="g-btn red">Foro</button><button class="g-btn">opciones</button></div>
+    </div>
+    <div class="game-row">
+      <div class="game-cover"><i class="ti ti-shield"></i></div>
+      <div class="game-info"><div class="game-name">Hades</div><div class="game-meta">Supergiant · Roguelike</div></div>
+      <span class="status-pill s-jugando">Jugando</span>
+      <div class="game-hours">94h</div>
+      <div class="game-btns"><button class="g-btn red">Foro</button><button class="g-btn">opciones</button></div>
+    </div>
+    <div class="game-row">
+      <div class="game-cover"><i class="ti ti-map"></i></div>
+      <div class="game-info"><div class="game-name">Hollow Knight</div><div class="game-meta">Team Cherry · Indie</div></div>
+      <span class="status-pill s-pendiente">Pendiente</span>
+      <div class="game-hours">12h</div>
+      <div class="game-btns"><button class="g-btn red">Foro</button><button class="g-btn">opciones</button></div>
+    </div>
+    <div class="game-row">
+      <div class="game-cover"><i class="ti ti-planet"></i></div>
+      <div class="game-info"><div class="game-name">Cyberpunk 2077</div><div class="game-meta">CD Projekt · RPG</div></div>
+      <span class="status-pill s-abandonado">Abandonado</span>
+      <div class="game-hours">22h</div>
+      <div class="game-btns"><button class="g-btn red">Foro</button><button class="g-btn">opciones</button></div>
+    </div>
+  </div>
+</div>

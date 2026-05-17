@@ -1,0 +1,121 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.screen{background:#0D0F12;border-radius:12px;overflow:hidden;width:100%;max-width:680px}
+.topbar{background:#1A1D23;display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #2a2d35}
+.hamburger{display:flex;flex-direction:column;gap:4px}.hamburger span{width:18px;height:2px;background:#EAEAEA;border-radius:2px}
+.logo{color:#E63946;font-size:16px;font-weight:700;letter-spacing:1px}
+.banner{height:90px;background:#2B2D42;position:relative;display:flex;align-items:flex-end}
+.banner-pattern{position:absolute;inset:0;opacity:0.15;background-image:repeating-linear-gradient(45deg,#E63946 0,#E63946 1px,transparent 0,transparent 50%);background-size:14px 14px}
+.banner-edit{position:absolute;top:8px;right:8px;background:#1A1D23;border:1px solid #2a2d35;border-radius:4px;padding:3px 8px;color:#EAEAEA;font-size:8px;cursor:pointer;display:flex;align-items:center;gap:3px}
+.banner-edit i{font-size:10px}
+.profile-header{padding:0 14px 0;position:relative;margin-top:-24px}
+.avatar-wrap{display:flex;align-items:flex-end;gap:12px}
+.big-avatar{width:60px;height:60px;border-radius:50%;background:#E63946;border:3px solid #0D0F12;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;position:relative}
+.online-indicator{position:absolute;bottom:2px;right:2px;width:12px;height:12px;background:#2ECC71;border-radius:50%;border:2px solid #0D0F12}
+.profile-actions{margin-left:auto;display:flex;gap:6px;padding-top:26px}
+.p-btn{background:#E63946;color:#fff;border:none;border-radius:5px;padding:5px 12px;font-size:10px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.p-btn.sec{background:transparent;border:1px solid #2a2d35;color:#EAEAEA}
+.p-btn i{font-size:11px}
+.profile-info{padding:8px 14px 10px;border-bottom:1px solid #2a2d35}
+.p-name{color:#EAEAEA;font-size:16px;font-weight:700}
+.p-handle{color:#8D99AE;font-size:11px}
+.p-level{background:#E63946;color:#fff;font-size:8px;padding:2px 6px;border-radius:3px;margin-left:6px}
+.p-bio{color:#8D99AE;font-size:10px;margin-top:5px;line-height:1.5}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid #2a2d35}
+.stat-box{text-align:center;padding:10px 0;border-right:1px solid #2a2d35}
+.stat-box:last-child{border-right:none}
+.stat-num{color:#EAEAEA;font-size:14px;font-weight:700}
+.stat-lbl{color:#8D99AE;font-size:8px;margin-top:2px}
+.profile-body{display:flex}
+.feed-col{flex:1;padding:10px 12px}
+.friends-col{width:160px;padding:10px;border-left:1px solid #2a2d35}
+.col-title{color:#EAEAEA;font-size:10px;font-weight:600;margin-bottom:8px}
+.mini-post{background:#1A1D23;border:1px solid #2a2d35;border-radius:6px;padding:8px;margin-bottom:7px}
+.mp-tag{background:#2B2D42;color:#8D99AE;font-size:8px;padding:1px 6px;border-radius:6px;display:inline-block;margin-bottom:4px}
+.mp-title{color:#EAEAEA;font-size:10px;font-weight:600}
+.mp-meta{color:#8D99AE;font-size:8px;margin-top:2px;display:flex;gap:8px}
+.mp-meta i{font-size:10px}
+.achievements{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.badge{background:#1A1D23;border:1px solid #2a2d35;border-radius:6px;padding:5px 7px;display:flex;flex-direction:column;align-items:center;gap:2px;width:44px}
+.badge i{font-size:16px;color:#E63946}
+.badge span{color:#8D99AE;font-size:7px;text-align:center}
+.friend-item{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.f-av{width:26px;height:26px;border-radius:50%;background:#2B2D42;display:flex;align-items:center;justify-content:center;font-size:8px;color:#EAEAEA;font-weight:700;position:relative;flex-shrink:0}
+.f-dot{position:absolute;bottom:0;right:0;width:8px;height:8px;border-radius:50%;border:1px solid #0D0F12}
+.fd-green{background:#2ECC71}
+.fd-gray{background:#8D99AE}
+.f-name{color:#EAEAEA;font-size:9px}
+.f-status{color:#8D99AE;font-size:8px}
+</style>
+<div class="screen">
+  <div class="topbar">
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="logo">ZERK</div>
+  </div>
+  <div class="banner">
+    <div class="banner-pattern"></div>
+    <button class="banner-edit"><i class="ti ti-edit"></i> Editar banner</button>
+  </div>
+  <div class="profile-header">
+    <div class="avatar-wrap">
+      <div class="big-avatar">BA<div class="online-indicator"></div></div>
+      <div class="profile-actions">
+        <button class="p-btn"><i class="ti ti-message"></i> Mensaje</button>
+        <button class="p-btn sec"><i class="ti ti-user-plus"></i> Amigo</button>
+        <button class="p-btn sec"><i class="ti ti-dots"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="profile-info">
+    <div class="p-name">Brayan Allarza <span class="p-level">Nv. 42</span></div>
+    <div class="p-handle">@brayan_allarza · Medellin, Colombia</div>
+    <div class="p-bio">Gamer desde los 8 años. Amante del soulslike, RPG y juegos indie. Moderador del servidor de Elden Ring en ZERK.</div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box"><div class="stat-num">24</div><div class="stat-lbl">Juegos</div></div>
+    <div class="stat-box"><div class="stat-num">18</div><div class="stat-lbl">Resenas</div></div>
+    <div class="stat-box"><div class="stat-num">147</div><div class="stat-lbl">Amigos</div></div>
+    <div class="stat-box"><div class="stat-num">63</div><div class="stat-lbl">Logros</div></div>
+  </div>
+  <div class="profile-body">
+    <div class="feed-col">
+      <div class="col-title">Logros destacados</div>
+      <div class="achievements">
+        <div class="badge"><i class="ti ti-trophy"></i><span>Top Reviewer</span></div>
+        <div class="badge"><i class="ti ti-sword"></i><span>Soulslike</span></div>
+        <div class="badge"><i class="ti ti-shield"></i><span>Moderador</span></div>
+        <div class="badge"><i class="ti ti-flame"></i><span>Activo</span></div>
+        <div class="badge"><i class="ti ti-star"></i><span>100h+</span></div>
+      </div>
+      <div class="col-title" style="margin-top:4px">Ultimas publicaciones</div>
+      <div class="mini-post">
+        <div class="mp-tag">Elden Ring</div>
+        <div class="mp-title">Reseña: 5/5 estrellas, una obra maestra</div>
+        <div class="mp-meta"><span><i class="ti ti-heart"></i> 342</span><span><i class="ti ti-message"></i> 87</span><span>hace 2h</span></div>
+      </div>
+      <div class="mini-post">
+        <div class="mp-tag">General</div>
+        <div class="mp-title">Comparativa de precios — como ahorrar en juegos</div>
+        <div class="mp-meta"><span><i class="ti ti-heart"></i> 89</span><span><i class="ti ti-message"></i> 21</span><span>hace 1d</span></div>
+      </div>
+      <div class="mini-post">
+        <div class="mp-tag">Hades</div>
+        <div class="mp-title">Build de Zagreus para el run perfecto</div>
+        <div class="mp-meta"><span><i class="ti ti-heart"></i> 55</span><span><i class="ti ti-message"></i> 14</span><span>hace 3d</span></div>
+      </div>
+    </div>
+    <div class="friends-col">
+      <div class="col-title">Amigos en linea</div>
+      <div class="friend-item"><div class="f-av">KG<div class="f-dot fd-green"></div></div><div><div class="f-name">Kevin G.</div><div class="f-status">Elden Ring</div></div></div>
+      <div class="friend-item"><div class="f-av">AA<div class="f-dot fd-green"></div></div><div><div class="f-name">Alex A.</div><div class="f-status">Explorando</div></div></div>
+      <div class="friend-item"><div class="f-av">CA<div class="f-dot fd-green"></div></div><div><div class="f-name">Camilo A.</div><div class="f-status">Hades</div></div></div>
+      <div class="friend-item"><div class="f-av" style="background:#1a1d23">xG<div class="f-dot fd-gray"></div></div><div><div class="f-name">xGamerPro</div><div class="f-status">Desconectado</div></div></div>
+      <div class="friend-item"><div class="f-av" style="background:#1a1d23">DS<div class="f-dot fd-gray"></div></div><div><div class="f-name">DarkSoul42</div><div class="f-status">Desconectado</div></div></div>
+      <div style="margin-top:8px;border-top:1px solid #2a2d35;padding-top:8px">
+        <div class="col-title">Ver biblioteca</div>
+        <button style="background:#2B2D42;color:#EAEAEA;border:none;border-radius:5px;padding:5px 0;width:100%;font-size:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px"><i class="ti ti-books" style="font-size:11px"></i> Abrir biblioteca</button>
+      </div>
+    </div>
+  </div>
+</div>

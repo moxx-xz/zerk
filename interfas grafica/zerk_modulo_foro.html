@@ -1,0 +1,102 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.screen{background:#0D0F12;border-radius:12px;overflow:hidden;width:100%;max-width:680px}
+.topbar{background:#1A1D23;display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #2a2d35}
+.hamburger{display:flex;flex-direction:column;gap:4px}.hamburger span{width:18px;height:2px;background:#EAEAEA;border-radius:2px}
+.logo{color:#E63946;font-size:16px;font-weight:700;letter-spacing:1px}
+.topbar-title{color:#EAEAEA;font-size:13px;font-weight:600;flex:1}
+.new-post-btn{background:#E63946;color:#fff;border:none;border-radius:4px;padding:5px 10px;font-size:10px;cursor:pointer}
+.sort-tabs{display:flex;gap:0;background:#1A1D23;border-bottom:1px solid #2a2d35}
+.stab{flex:1;text-align:center;padding:7px 0;color:#8D99AE;font-size:10px;cursor:pointer;border-bottom:2px solid transparent}
+.stab.active{color:#E63946;border-bottom-color:#E63946}
+.subforos{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid #2a2d35;overflow-x:auto;background:#12141a}
+.sforum{background:#2B2D42;color:#EAEAEA;font-size:9px;padding:3px 10px;border-radius:10px;white-space:nowrap;cursor:pointer}
+.sforum.active{background:#E63946}
+.feed{padding:8px 12px;display:flex;flex-direction:column;gap:8px}
+.post{background:#1A1D23;border:1px solid #2a2d35;border-radius:8px;padding:10px 12px}
+.post-header{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.avatar{width:28px;height:28px;border-radius:50%;background:#2B2D42;display:flex;align-items:center;justify-content:center;font-size:9px;color:#EAEAEA;font-weight:700;flex-shrink:0}
+.post-meta{flex:1}
+.post-user{color:#EAEAEA;font-size:10px;font-weight:600}
+.post-time{color:#8D99AE;font-size:8px}
+.post-tag{background:#2B2D42;color:#8D99AE;font-size:8px;padding:2px 7px;border-radius:8px}
+.post-title{color:#EAEAEA;font-size:11px;font-weight:600;margin-bottom:4px}
+.post-body{color:#8D99AE;font-size:10px;line-height:1.5;margin-bottom:8px}
+.post-body .stars{color:#E63946;font-size:10px}
+.post-footer{display:flex;align-items:center;gap:12px}
+.pf-btn{display:flex;align-items:center;gap:4px;color:#8D99AE;font-size:9px;cursor:pointer}
+.pf-btn i{font-size:12px}
+.pf-btn.liked{color:#E63946}
+.post-img-preview{background:#2B2D42;border-radius:5px;height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.post-img-preview i{font-size:20px;color:#E63946;opacity:0.4}
+.reply-box{background:#0D0F12;border:1px solid #2a2d35;border-radius:6px;padding:7px 10px;display:flex;align-items:center;gap:8px;margin-top:8px}
+.reply-box input{flex:1;background:transparent;border:none;outline:none;color:#8D99AE;font-size:10px}
+.reply-box button{background:#E63946;border:none;border-radius:3px;padding:3px 8px;color:#fff;font-size:9px;cursor:pointer}
+.reply{background:#12141a;border-left:2px solid #E63946;border-radius:0 5px 5px 0;padding:6px 9px;margin-top:6px}
+.reply-user{color:#EAEAEA;font-size:9px;font-weight:600}
+.reply-txt{color:#8D99AE;font-size:9px;margin-top:2px}
+</style>
+<div class="screen">
+  <div class="topbar">
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="logo">ZERK</div>
+    <div class="topbar-title">Comunidad</div>
+    <button class="new-post-btn">+ Publicar</button>
+  </div>
+  <div class="sort-tabs">
+    <div class="stab">Reciente</div>
+    <div class="stab active">Popular</div>
+    <div class="stab">Tendencia</div>
+    <div class="stab">Mis posts</div>
+  </div>
+  <div class="subforos">
+    <div class="sforum active">General</div>
+    <div class="sforum">Elden Ring</div>
+    <div class="sforum">God of War</div>
+    <div class="sforum">GTA VI</div>
+    <div class="sforum">Hollow Knight</div>
+    <div class="sforum">Hades</div>
+    <div class="sforum">Indie</div>
+  </div>
+  <div class="feed">
+    <div class="post">
+      <div class="post-header">
+        <div class="avatar">BA</div>
+        <div class="post-meta">
+          <div class="post-user">Brayan Allarza <span style="color:#E63946;font-size:7px">✦ LIDER</span></div>
+          <div class="post-time">hace 2 horas</div>
+        </div>
+        <div class="post-tag">Elden Ring</div>
+      </div>
+      <div class="post-title">Reseña completa — 5/5 estrellas, una obra maestra</div>
+      <div class="post-body"><span class="stars">★★★★★</span> Despues de 212 horas, puedo decir sin dudas que Elden Ring es el mejor juego que he jugado. El mundo abierto de Midgard es una maravilla...</div>
+      <div class="post-footer">
+        <div class="pf-btn liked"><i class="ti ti-heart-filled"></i> 342</div>
+        <div class="pf-btn"><i class="ti ti-message"></i> 87 comentarios</div>
+        <div class="pf-btn"><i class="ti ti-share"></i> Compartir</div>
+        <div class="pf-btn" style="margin-left:auto"><i class="ti ti-flag"></i></div>
+      </div>
+      <div class="reply"><div class="reply-user">Kevin G.</div><div class="reply-txt">Totalmente de acuerdo! El jefe Radahn me quito el alma jaja</div></div>
+      <div class="reply-box"><input placeholder="Escribe una respuesta..."><button>Enviar</button></div>
+    </div>
+    <div class="post">
+      <div class="post-header">
+        <div class="avatar">AA</div>
+        <div class="post-meta">
+          <div class="post-user">Alex Amaya</div>
+          <div class="post-time">hace 5 horas</div>
+        </div>
+        <div class="post-tag">God of War</div>
+      </div>
+      <div class="post-title">Comparativa: God of War Ragnarok vs el original</div>
+      <div class="post-img-preview"><i class="ti ti-photo"></i></div>
+      <div class="post-body">Juegue los dos seguidos y aqui les traigo mi analisis detallado de mecanicas, historia y graficos...</div>
+      <div class="post-footer">
+        <div class="pf-btn"><i class="ti ti-heart"></i> 128</div>
+        <div class="pf-btn"><i class="ti ti-message"></i> 34 comentarios</div>
+        <div class="pf-btn"><i class="ti ti-share"></i> Compartir</div>
+      </div>
+    </div>
+  </div>
+</div>

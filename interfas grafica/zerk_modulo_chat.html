@@ -1,0 +1,140 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.screen{background:#0D0F12;border-radius:12px;overflow:hidden;width:100%;max-width:680px;display:flex;height:420px}
+.servers{width:52px;background:#0a0b0e;border-right:1px solid #2a2d35;display:flex;flex-direction:column;align-items:center;padding:8px 0;gap:8px}
+.srv-icon{width:36px;height:36px;border-radius:50%;background:#1A1D23;display:flex;align-items:center;justify-content:center;font-size:9px;color:#EAEAEA;font-weight:700;cursor:pointer;border:2px solid transparent;flex-shrink:0}
+.srv-icon.active{border-color:#E63946;border-radius:12px}
+.srv-icon i{font-size:16px;color:#8D99AE}
+.srv-icon.active i{color:#E63946}
+.srv-sep{width:24px;height:1px;background:#2a2d35}
+.channels{width:160px;background:#12141a;border-right:1px solid #2a2d35;display:flex;flex-direction:column}
+.ch-header{padding:10px 10px 6px;border-bottom:1px solid #2a2d35}
+.ch-server-name{color:#EAEAEA;font-size:11px;font-weight:700}
+.ch-server-sub{color:#8D99AE;font-size:8px}
+.ch-section{padding:6px 8px 2px}
+.ch-label{color:#8D99AE;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.channel-item{display:flex;align-items:center;gap:5px;padding:4px 6px;border-radius:4px;cursor:pointer;margin-bottom:1px}
+.channel-item.active{background:#2B2D42}
+.channel-item i{font-size:12px;color:#8D99AE}
+.channel-item.active i{color:#EAEAEA}
+.channel-name{color:#8D99AE;font-size:10px}
+.channel-item.active .channel-name{color:#EAEAEA}
+.ch-unread{background:#E63946;color:#fff;font-size:7px;padding:1px 4px;border-radius:8px;margin-left:auto}
+.chat-main{flex:1;display:flex;flex-direction:column}
+.chat-header{background:#1A1D23;padding:8px 12px;border-bottom:1px solid #2a2d35;display:flex;align-items:center;gap:8px}
+.chat-header i{font-size:14px;color:#8D99AE}
+.chat-title{color:#EAEAEA;font-size:11px;font-weight:600;flex:1}
+.chat-header-icons{display:flex;gap:10px}
+.chat-header-icons i{font-size:14px;color:#8D99AE}
+.messages{flex:1;padding:10px 12px;display:flex;flex-direction:column;gap:10px;overflow-y:auto}
+.msg{display:flex;gap:8px}
+.msg-avatar{width:28px;height:28px;border-radius:50%;background:#2B2D42;display:flex;align-items:center;justify-content:center;font-size:8px;color:#EAEAEA;font-weight:700;flex-shrink:0}
+.av-green-sm{background:#1a3a2a;color:#2ECC71}
+.msg-content{}
+.msg-user{color:#EAEAEA;font-size:10px;font-weight:600;display:flex;align-items:center;gap:5px}
+.msg-time{color:#8D99AE;font-size:8px;font-weight:400}
+.msg-role{background:#E63946;color:#fff;font-size:7px;padding:1px 4px;border-radius:3px}
+.msg-text{color:#8D99AE;font-size:10px;margin-top:2px;line-height:1.5}
+.msg-reactions{display:flex;gap:4px;margin-top:3px}
+.reaction{background:#2B2D42;border-radius:8px;padding:2px 5px;font-size:8px;color:#EAEAEA}
+.msg-input-area{background:#1A1D23;border-top:1px solid #2a2d35;padding:8px 10px;display:flex;align-items:center;gap:8px}
+.msg-input{flex:1;background:#0D0F12;border:1px solid #2a2d35;border-radius:6px;padding:6px 10px;color:#8D99AE;font-size:10px}
+.msg-icons{display:flex;gap:8px}
+.msg-icons i{font-size:14px;color:#8D99AE;cursor:pointer}
+.send-btn{background:#E63946;border:none;border-radius:5px;padding:5px 10px;cursor:pointer}
+.send-btn i{font-size:14px;color:#fff}
+.members{width:130px;background:#12141a;border-left:1px solid #2a2d35;padding:8px}
+.mem-title{color:#8D99AE;font-size:8px;font-weight:700;text-transform:uppercase;margin-bottom:6px}
+.member{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.mem-av{width:24px;height:24px;border-radius:50%;background:#2B2D42;display:flex;align-items:center;justify-content:center;font-size:7px;color:#EAEAEA;font-weight:700;position:relative;flex-shrink:0}
+.online-dot{position:absolute;bottom:0;right:0;width:7px;height:7px;border-radius:50%;border:1px solid #12141a}
+.dot-green{background:#2ECC71}
+.dot-yellow{background:#E9A944}
+.dot-gray{background:#8D99AE}
+.mem-name{color:#8D99AE;font-size:9px}
+</style>
+<div class="screen">
+  <div class="servers">
+    <div class="srv-icon"><i class="ti ti-home"></i></div>
+    <div class="srv-sep"></div>
+    <div class="srv-icon active" title="Elden Ring"><span>ER</span></div>
+    <div class="srv-icon" title="God of War"><span>GoW</span></div>
+    <div class="srv-icon" title="Hades"><span>HD</span></div>
+    <div class="srv-icon" title="GTA"><span>GT</span></div>
+    <div class="srv-icon" title="Indie"><i class="ti ti-device-gamepad"></i></div>
+    <div class="srv-sep"></div>
+    <div class="srv-icon" style="background:#1a3a2a"><i class="ti ti-plus" style="color:#2ECC71"></i></div>
+  </div>
+  <div class="channels">
+    <div class="ch-header">
+      <div class="ch-server-name">Elden Ring</div>
+      <div class="ch-server-sub">3,482 miembros</div>
+    </div>
+    <div class="ch-section">
+      <div class="ch-label">Texto</div>
+      <div class="channel-item active"><i class="ti ti-hash"></i><div class="channel-name">general</div></div>
+      <div class="channel-item"><i class="ti ti-hash"></i><div class="channel-name">builds</div><div class="ch-unread">3</div></div>
+      <div class="channel-item"><i class="ti ti-hash"></i><div class="channel-name">lore</div></div>
+      <div class="channel-item"><i class="ti ti-hash"></i><div class="channel-name">pvp</div><div class="ch-unread">7</div></div>
+      <div class="channel-item"><i class="ti ti-hash"></i><div class="channel-name">spoilers</div></div>
+    </div>
+    <div class="ch-section">
+      <div class="ch-label">Voz</div>
+      <div class="channel-item"><i class="ti ti-volume"></i><div class="channel-name">Gaming Room 1</div></div>
+      <div class="channel-item"><i class="ti ti-volume"></i><div class="channel-name">Gaming Room 2</div></div>
+      <div class="channel-item"><i class="ti ti-volume"></i><div class="channel-name">Co-op</div></div>
+    </div>
+  </div>
+  <div class="chat-main">
+    <div class="chat-header">
+      <i class="ti ti-hash"></i>
+      <div class="chat-title">general</div>
+      <div class="chat-header-icons">
+        <i class="ti ti-search"></i>
+        <i class="ti ti-users"></i>
+        <i class="ti ti-bell"></i>
+      </div>
+    </div>
+    <div class="messages">
+      <div class="msg">
+        <div class="msg-avatar av-green-sm">KG</div>
+        <div class="msg-content">
+          <div class="msg-user">Kevin G. <span class="msg-time">hoy 14:32</span></div>
+          <div class="msg-text">Acabo de vencer a Malenia al segundo intento jaja, quien quiere hacer co-op para el final boss?</div>
+          <div class="msg-reactions"><span class="reaction">🔥 12</span><span class="reaction">💀 5</span></div>
+        </div>
+      </div>
+      <div class="msg">
+        <div class="msg-avatar">BA</div>
+        <div class="msg-content">
+          <div class="msg-user">Brayan A. <span class="msg-role">Mod</span> <span class="msg-time">hoy 14:35</span></div>
+          <div class="msg-text">Yo me apunto! Tambien hay un bug en el drop de Radagon que deben saber, lo explico al rato</div>
+        </div>
+      </div>
+      <div class="msg">
+        <div class="msg-avatar">CA</div>
+        <div class="msg-content">
+          <div class="msg-user">Camilo A. <span class="msg-time">hoy 14:38</span></div>
+          <div class="msg-text">Yo tambien, mi build de mago esta lista. A que hora se conectan?</div>
+          <div class="msg-reactions"><span class="reaction">👍 3</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="msg-input-area">
+      <div class="msg-icons"><i class="ti ti-paperclip"></i></div>
+      <div class="msg-input">Escribe un mensaje en #general...</div>
+      <div class="msg-icons"><i class="ti ti-mood-smile"></i><i class="ti ti-gif"></i></div>
+      <button class="send-btn"><i class="ti ti-send"></i></button>
+    </div>
+  </div>
+  <div class="members">
+    <div class="mem-title">En linea — 24</div>
+    <div class="member"><div class="mem-av av-green-sm">KG<div class="online-dot dot-green"></div></div><div class="mem-name">Kevin G.</div></div>
+    <div class="member"><div class="mem-av">BA<div class="online-dot dot-green"></div></div><div class="mem-name">Brayan A.</div></div>
+    <div class="member"><div class="mem-av">CA<div class="online-dot dot-green"></div></div><div class="mem-name">Camilo A.</div></div>
+    <div class="member"><div class="mem-av">AA<div class="online-dot dot-yellow"></div></div><div class="mem-name">Alex A.</div></div>
+    <div class="member"><div class="mem-av" style="background:#1a1d23">U1<div class="online-dot dot-green"></div></div><div class="mem-name">xGamerPro</div></div>
+    <div class="member"><div class="mem-av" style="background:#1a1d23">U2<div class="online-dot dot-gray"></div></div><div class="mem-name">DarkSoul42</div></div>
+  </div>
+</div>
